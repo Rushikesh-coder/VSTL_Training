@@ -3,7 +3,9 @@ package com.day9.com;
 public class TestExceptionHandeling {
 
 	public static void main(String[] args) {
+		
 		ExceptionHandeling objExceptionHandeling=new ExceptionHandeling();
+		System.out.println("\n===========================Arithmatic Exception============================\n");
 		objExceptionHandeling.intCalculator(54, 0);
 		
 		System.out.println("\n===========================Null Pointer Exception============================\n");
