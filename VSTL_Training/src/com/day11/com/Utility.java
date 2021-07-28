@@ -69,7 +69,7 @@ public class Utility {
 		objHashTable.put("FirstName", randomName());
 		objHashTable.put("LastName", randomName());
 		objHashTable.put("MobileNumber", randomNumber());
-		objHashTable.put("Password", "Rushi@123");
+		objHashTable.put("Password", "ABC@123");
 		objHashTable.put("Date", randomDate());
 		objHashTable.put("Gender", strGender());
 
