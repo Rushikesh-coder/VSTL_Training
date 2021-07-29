@@ -14,57 +14,38 @@ public class SignUpFlow {
 		objUtility = new Utility();
 
 	}
-	int intIndex=0;
+
 	public void doSignUp() {
 
-		
-		strTestData = objUtility.signUpTestData().get("FirstName");
+		strTestData = objUtility.signUpTestData().get("FirstName")+objUtility.randomName(4);
 		if (!strTestData.equals("")) {
 			objFaceBookSignUpPage.setName(strTestData);
-			
-		} else {
-			System.out.println("Empty fields ");
-			intIndex++;
+
 		}
 
-		strTestData = objUtility.signUpTestData().get("LastName");
+		strTestData = objUtility.signUpTestData().get("LastName")+objUtility.randomName(4);
 		if (!strTestData.equals("")) {
 			objFaceBookSignUpPage.setLastName(strTestData);
-		} else {
-			System.out.println("Empty field ");
-			intIndex++;
 		}
 
-		strTestData = objUtility.signUpTestData().get("MobileNumber");
+		strTestData = objUtility.signUpTestData().get("MobileNumber")+objUtility.randomNumber();
 		if (!strTestData.equals("")) {
 			objFaceBookSignUpPage.setMobileNumber(strTestData);
-		} else {
-			System.out.println("Empty field");
-			intIndex++;
 		}
 
 		strTestData = objUtility.signUpTestData().get("Password");
 		if (!strTestData.equals("")) {
 			objFaceBookSignUpPage.setPassword(strTestData);
-		} else {
-			System.out.println("Empty field");
-			intIndex++;
 		}
 
-		strTestData = objUtility.signUpTestData().get("Date");
+		strTestData = objUtility.signUpTestData().get("Date")+objUtility.randomDate();
 		if (!strTestData.equals("")) {
 			objFaceBookSignUpPage.setDate(strTestData);
-		} else {
-			System.out.println("Empty field ");
-			intIndex++;
 		}
-		
+
 		strTestData = objUtility.signUpTestData().get("Gender");
 		if (!strTestData.equals("")) {
 			objFaceBookSignUpPage.setGender(strTestData);
-		} else {
-			System.out.println("Empty field ");
-			intIndex++;
 		}
 
 		objFaceBookSignUpPage.clickSignUpButton();
@@ -73,16 +54,16 @@ public class SignUpFlow {
 
 	public void verifyHomePageIsVisible() {
 		String strExpectedData = objFaceBookHomePage.getLogOutText();
-		
+
 		strTestData = objUtility.signUpTestData().get("HomePage");
-		
-		if (strExpectedData.equals(strTestData) && intIndex==0) {
+
+		if (strExpectedData.equals(strTestData)) {
 			System.out.println("LogOut Button is visible");
 			System.out.println("Test Passed");
 
 		} else {
 			System.out.println("LogOut Button is not visible");
-			
+
 			System.out.println("Test failed");
 		}
 	}

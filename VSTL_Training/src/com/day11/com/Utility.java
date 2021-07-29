@@ -11,11 +11,27 @@ public class Utility {
 	public Utility() {
 		objHashTable = new Hashtable<>();
 	}
+	
+	
+	public Hashtable<String, String> signUpTestData() {
 
-	public String randomName() {
+		objHashTable = new Hashtable<>();
+		objHashTable.put("FirstName", "Rupam");
+		objHashTable.put("LastName", "Patil");
+		objHashTable.put("MobileNumber", "97");
+		objHashTable.put("Password", "ABC@123");
+		objHashTable.put("Date", "21");
+		objHashTable.put("Gender", "Male");
+
+		objHashTable.put("HomePage", "LogOut");
+		return objHashTable;
+	}
+	
+
+	public String randomName(int intLength) {
 		String charaToz = "abcdefghijklmnopqrstuvwxyz";
-		String strRandomName = "XYZ";
-		for (int i = 0; i < 6; i++) {
+		String strRandomName = "";
+		for (int i = 0; i < intLength; i++) {
 			int intRandomNumber = (int) (Math.random() * charaToz.length());
 			strRandomName += charaToz.substring(intRandomNumber, intRandomNumber + 1);
 		}
@@ -25,7 +41,7 @@ public class Utility {
 
 	public String randomNumber() {
 
-		String strRandomMobileNumber = "97";
+		String strRandomMobileNumber = "";
 		for (int intIndex = 0; intIndex < 8; intIndex++) {
 			strRandomMobileNumber = strRandomMobileNumber + (int) (Math.random() * 9);
 		}
@@ -51,30 +67,12 @@ public class Utility {
 				break;
 			}
 		}
-		String strRandomDate = "Date :" + intDay + " / " + strRandomMonth + " / " + intYear;
+		String strRandomDate = " / " + strRandomMonth + " / " + intYear;
 
 		return strRandomDate;
 
 	}
 
-	public String strGender() {
-		String strGender[] = { "Male", "Female", "Custom" };
-		String strRandomRedio = strGender[objRandomClass.nextInt(strGender.length - 1)];
-		return strRandomRedio;
-	}
-
-	public Hashtable<String, String> signUpTestData() {
-
-		objHashTable = new Hashtable<>();
-		objHashTable.put("FirstName", randomName());
-		objHashTable.put("LastName", randomName());
-		objHashTable.put("MobileNumber", randomNumber());
-		objHashTable.put("Password", "ABC@123");
-		objHashTable.put("Date", randomDate());
-		objHashTable.put("Gender", strGender());
-
-		objHashTable.put("HomePage", "LogOut");
-		return objHashTable;
-	}
+	
 
 }
