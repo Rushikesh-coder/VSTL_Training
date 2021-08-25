@@ -32,7 +32,6 @@ public class ArrayListExample {
 		System.out.println("Sorted List : " + listOfCart + "\n");
 
 		Collections.reverse(listOfCart);
-
 		System.out.println("Reverced List : " + listOfCart + "\n");
 
 	}
