@@ -70,7 +70,7 @@ public class SetExample {
 		listOfCart.add("TV");
 		listOfCart.add("Woshing Machin");
 		
-		System.out.println("\n========================Mentaning the insertion order===========================\n");
+		System.out.println("\n======================== Mentaning the insertion order ===========================\n");
 		Iterator<String> itrCart =listOfCart.iterator();
 		
 		while(itrCart.hasNext())
